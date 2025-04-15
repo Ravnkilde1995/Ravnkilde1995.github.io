@@ -59,13 +59,10 @@ If you'd like to run the portfolio or individual projects locally:
 ## ✨ Purpose
 This portfolio was created with the goal of:
 
-Practicing modern frontend development
-
-Building real, visual, and interactive projects
-
-Demonstrating clean code, structured files, and responsive design
-
-Serving as a personal showcase for potential employers and collaborators
+- Practicing modern frontend development
+- Building real, visual, and interactive projects
+- Demonstrating clean code, structured files, and responsive design
+- Serving as a personal showcase for potential employers and collaborators
 
 I will continue updating this portfolio as I expand my skill set. 🚀
 
