@@ -54,6 +54,8 @@ If you'd like to run the portfolio or individual projects locally:
 3. You can either open index.html directly in your browser
    or use a local development server (e.g., Live Server in VS Code).
 
+---
+
 ## ✨ Purpose
 This portfolio was created with the goal of:
 
@@ -66,6 +68,8 @@ Demonstrating clean code, structured files, and responsive design
 Serving as a personal showcase for potential employers and collaborators
 
 I will continue updating this portfolio as I expand my skill set. 🚀
+
+---
 
 ## 📬 Contact
 Feel free to reach out or connect with me:
