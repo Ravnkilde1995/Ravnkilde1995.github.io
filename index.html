@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio | Oliver Ravnkilde</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- header -->
+
     <header class="header">
         <a id="logo"><span id="color">Port</span>folio</a>
+        <i id="menu-icon" class='bx bx-menu'></i>
         <nav class="nav navbar">
-            <a href="#home" class="active">Home</a>
+            <a href="#home" class="active">Welcome</a>
             <a href="#about">About Me</a>
             <a href="#projects">Projects</a>     
         </nav>
     </header>
 
-<!-- home section -->
+    <!-- home section -->
 
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hi</h3>  
-            <h1>I'm <span id="name">Oliver<br></span> A  Jr. Frontend Developer</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Temporibus vitae cum minus distinctio quos ducimus maiores, accusantium numquam voluptates nulla, quo quaerat debitis impedit sunt ex perferendis non nam deleniti?
-            Ullam inventore deserunt placeat ex, enim ducimus repellat suscipit molestiae fuga perferendis accusamus ipsam voluptatibus, dolores, consequuntur facilis obcaecati delectus. Quaerat excepturi incidunt magnam esse mollitia optio architecto reprehenderit similique.
+            <h1>I'm <span id="name">Oliver<br></span></h1>
+            <p>Welcome to my portfolio! I'm Oliver, a junior frontend developer with a passion for building interactive and visually appealing web experiences. This site showcases some of the projects I've worked on as I continue to grow my skills in modern web development. Take a look around and feel free to reach out!</p>
             </p>
         </div>
         <div class="img-box">
-            <img src="projects/oh-studio/resources/img/pexels-justin-shaifer-501272-1222271.jpg" alt="">
+            <img src="assets/ravenArt.png" alt="">
         </div>
     </section>
 
@@ -41,24 +44,58 @@
         <div class="about-content">
             <h2 class="heading">About <span id="name">Me</span></h2>
             <h3>Jr. Frontend <span id="name">Developer</span></h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ex culpa quam corrupti non consequuntur doloremque omnis, placeat nostrum facere eligendi quas minima ut animi deserunt id, quibusdam natus et.
-            Debitis eaque est fugiat porro aperiam! Quaerat sed accusantium ducimus saepe enim debitis doloremque libero delectus nihil? Doloremque, nisi inventore omnis ipsa unde blanditiis, amet nulla commodi est nam alias!</p>
+            <p>I'm a self-driven frontend developer focused on writing clean, efficient code and creating responsive, user-friendly interfaces. My core skills include HTML, CSS, and JavaScript, and I'm constantly learning new tools and frameworks to improve my workflow. Whether it's through online courses or hands-on projects, I'm always looking for ways to level up and bring ideas to life through code.</p>
         </div>
     </section>
 
-    <section class="projects" id="projects">
-        <div class="project-content">
-            <h2>My <span id="name">Work</span></h2>
+    <!-- project section -->
 
-            <div class="div project-list">
-                <a href=""></a>
+    <section class="projects" id="projects">
+        <h2>My <span id="name">Work</span></h2>
+        <div class="project-slider">
+            <div class="project-container">
+                <div class="project-box">
+                    <img src="projects/oh-studio/resources/img/pexels-joshsorenson-1334597.jpg" alt="">
+                    <div class="project-layer">
+                        <h4>Project 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ex culpa quam corrupti non consequuntur doloremque omnis, placeat nostrum facere eligendi quas minima ut animi deserunt id, quibusdam natus et.</p>
+                        <a href="#"><i class='bx bx-link-external'></i>></a>
+                    </div>
+                </div>  
+                <div class="project-box">
+                    <img src="projects/oh-studio/resources/img/pexels-joshsorenson-1334597.jpg" alt="">
+                    <div class="project-layer">
+                        <h4>Project 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ex culpa quam corrupti non consequuntur doloremque omnis, placeat nostrum facere eligendi quas minima ut animi deserunt id, quibusdam natus et.</p>
+                        <a href="#"><i class='bx bx-link-external'></i>></a>
+                    </div>
+                </div> 
+                <div class="project-box">
+                    <img src="projects/oh-studio/resources/img/pexels-joshsorenson-1334597.jpg" alt="">
+                    <div class="project-layer">
+                        <h4>Project 1</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam ex culpa quam corrupti non consequuntur doloremque omnis, placeat nostrum facere eligendi quas minima ut animi deserunt id, quibusdam natus et.</p>
+                        <a href="#"><i class='bx bx-link-external'></i>></a>
+                    </div>
+                </div>  
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    <!-- footer -->
+
+    <footer class="footer">
+        <div class="footer-icon">
+            <a href="#home">
+                <i class='bx bx-up-arrow-alt'></i>
+                <span>Go <span id="name">Back</span></span>
+            </a>
+        </div>
+        <div class="footer-background">
+            <div class="footer-content">
+                <p>Copyright &copy; 2025 by Oliver Ravnkilde. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
-    
 </body>
 </html>

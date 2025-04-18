@@ -18,6 +18,13 @@
     --grey: #989389;
     --rose: #601919;
 
+    --body: #dad7cd;
+    --header: #a3b18a;
+    --olive: #588157;
+    --green: #3a5a40;
+    --dark-green: #344e41;
+
+
 }
 
 .header {
@@ -38,6 +45,12 @@
     font-size: 2.5rem;
     font-weight: 600;
     transition: 0.3s ease;
+}
+
+#menu-icon {
+    display: none;
+    font-size: 3.6rem;
+    color: var(--beige); 
 }
 
 #logo:hover {
@@ -140,22 +153,133 @@ section {
     margin: 2em 0 3em;
 }
 
-.project-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 8% 8%;
-    background: var(--cream);
-}
 
-.project-content h2 {
+.projects h2 {
+    text-align: center;
+    font-size: 10rem;
     text-transform: uppercase;
     color: var(--black);
-    font-size: 142px;
+    margin-bottom: 5rem;
 }
-.project-list{
-    grid-column-gap: 4em;
-    grid-row-gap: 4em;
-    flex-flow: wrap;
+
+.project-container {
+    display: flex; 
+    gap: 2rem; 
+    overflow: hidden; 
+}
+
+.project-box {
+    flex: 0 0 30%; 
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.project-box img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-box:hover {
+    transform: scale(1.05); 
+    border-radius: 5rem 5rem; 
+}
+
+.project-box:hover img {
+    transform: scale(1.1); 
+}
+
+.project-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); 
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+}
+
+.project-box:hover .project-layer {
+    opacity: 1; 
+}
+
+.project-layer h4 {
+    font-size: 1.8rem;
+    color: var(--beige);
+    margin-bottom: 0.5rem;
+}
+
+.project-layer a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--coral-2);
+    color: var(--black);
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+.project-layer a:hover {
+    background: var(--coral-1);
+}
+
+.footer {
+    position: relative;
+    text-align: center; 
+}
+
+.footer-background {
+    background: var(--black); 
+    padding: 2rem 0; 
+}
+
+.footer-content {
+    color: var(--beige);
+    font-size: 1rem;
+    text-align: center; 
+}
+
+.footer-icon {
+    position: relative;
+    top: -4rem; 
+    left: 50%; 
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer-icon a {
+    text-decoration: none;
+    color: var(--coral-2);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.footer-icon a i {
+    font-size: 3rem;
+    transition: transform 0.3s ease; 
+}
+
+.footer-icon a:hover i {
+    transform: translateY(-5px); 
+}
+
+.footer-icon a span {
+    font-size: 2rem; 
+    font-weight: bold;
+    color: var(--black);
 }
