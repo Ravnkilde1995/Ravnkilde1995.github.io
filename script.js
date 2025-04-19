@@ -6,6 +6,11 @@ const navLinks = document.querySelectorAll("header nav a");
 const menuIcon = document.querySelector("#menu-icon");
 const navbar = document.querySelector(".navbar");
 
+// project slider
+const projectContainer = document.querySelector('.project-container');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
 menuIcon.onclick = () => {
     menuIcon.classList.toggle("bx-x");
     navbar.classList.toggle("active");
@@ -34,3 +39,23 @@ window.onscroll = () => {
     menuIcon.classList.remove("bx-x");
     navbar.classList.remove("active");
 };
+
+let scrollAmount = 0;
+
+nextBtn.addEventListener('click', () => {
+    const containerWidth = projectContainer.offsetWidth;
+    scrollAmount += containerWidth;
+    if (scrollAmount >= projectContainer.scrollWidth) {
+        scrollAmount = 0; // Gå tilbage til starten
+    }
+    projectContainer.style.transform = `translateX(-${scrollAmount}px)`;
+});
+
+prevBtn.addEventListener('click', () => {
+    const containerWidth = projectContainer.offsetWidth;
+    scrollAmount -= containerWidth;
+    if (scrollAmount < 0) {
+        scrollAmount = projectContainer.scrollWidth - containerWidth; // Gå til slutningen
+    }
+    projectContainer.style.transform = `translateX(-${scrollAmount}px)`;
+});

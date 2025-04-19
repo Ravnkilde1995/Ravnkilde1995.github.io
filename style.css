@@ -429,6 +429,22 @@ section {
         flex: 0 0 80%; 
         margin-bottom: 2rem; 
     }
+
+    .social-media {
+        display: flex;
+        justify-content: center; /* Centrerer social media-ikonerne */
+        gap: 1.5rem; /* Tilføjer afstand mellem ikonerne */
+        margin-top: 2rem; /* Tilføjer afstand over social media-ikonerne */
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        margin: 2rem auto; /* Centrerer knappen */
+    }
     
 }
 
@@ -436,10 +452,10 @@ section {
     .html{
         font-size: 50%;
     }
-    
 }
 
 @media (max-width: 365px) {
+
     .home-img img{
         width: 100%;
     }
