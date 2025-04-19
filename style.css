@@ -429,6 +429,22 @@ section {
         flex: 0 0 80%; 
         margin-bottom: 2rem; 
     }
+
+    .social-media {
+        display: flex;
+        justify-content: center; 
+        gap: 1.5rem; 
+        margin-top: 2rem;
+    }
+
+    .btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        margin: 2rem auto;
+    }
     
 }
 
@@ -436,10 +452,10 @@ section {
     .html{
         font-size: 50%;
     }
-    
 }
 
 @media (max-width: 365px) {
+
     .home-img img{
         width: 100%;
     }
