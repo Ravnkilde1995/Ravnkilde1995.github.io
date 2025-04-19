@@ -5,7 +5,14 @@
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     list-style: none;
+    border: none;
+    outline: none;
     scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
 }
 
 :root{
@@ -17,14 +24,6 @@
     --coral-2: #F0AD83;
     --grey: #989389;
     --rose: #601919;
-
-    --body: #dad7cd;
-    --header: #a3b18a;
-    --olive: #588157;
-    --green: #3a5a40;
-    --dark-green: #344e41;
-
-
 }
 
 .header {
@@ -46,8 +45,9 @@
 
 #logo {
     color: var(--beige); 
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 600;
+    cursor: default;
     transition: 0.3s ease;
 }
 
@@ -71,10 +71,10 @@
 }
 
 .navbar a {
-    font-size: 1.7rem;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--beige); 
-    margin-left: 3rem;
+    margin-left: 4rem;
     border-bottom: 3px solid transparent;
     transition: 0.3s ease;
 }
@@ -82,7 +82,6 @@
 .navbar a:hover,
 .navbar a.active {
     color: var(--coral-2); 
-    border-bottom: 3px solid var(--coral-2); 
 }
 
 section {
@@ -91,13 +90,9 @@ section {
 }
 
 .home{
-    width: 100%;
-    min-height: 100vh;
-    background: #fff;
+    background: var(--cream);
     display: flex;
     align-items: center;
-    gap: 7em;
-    padding: 30px 12% 0;
 }
 
 .home-content {
@@ -106,22 +101,68 @@ section {
 
 .home-content h3 {
     font-size: 3.2rem;
+    font-weight: 700;
 }
 
-.home-content h1 {
-    font-size: 5.5rem;
-    line-height: 1.2;
+.home-content h3:nth-of-type(2) {
     margin-bottom: 2rem;
 }
 
-.home-content p {
-    font-size: 1.2rem;
+.home-content h1 {
+    font-size: 5.6rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    font-weight: 700;
 }
 
-.img-box img {
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--coral-2);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--coral-2);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--coral-2);
+    color: var(--black);
+    box-shadow: 0 0 1rem var(--black);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: var(--coral-2);
+    color: var(--black);
+    font-size: 1.8rem;
+    border-radius: 3rem;
+    font-weight: 500;
+    box-shadow: 0 0 1rem var(--black);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--coral-1);
+    transform: translateY(-5px); 
+    box-shadow: none;
+}
+
+.home-img img {
     width: 35vw;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: 0 0 1rem var(--blue);
 }
 
 .about {
@@ -129,34 +170,39 @@ section {
     justify-content: center;
     align-items: center;
     padding: 12% 8%;
-    gap: 10em;
+    gap: 2rem;
     background: var(--blue);
 }
 
 .about-img img{
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 1rem var(--black);
     width: 35vw;
     border-radius: 50%;
     
 }
 
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
 .about-content h2{
     text-align: left;
-    color: var(--black);
-    font-size: 42px;
+    line-height: 1.2;
 }
 
 .about-content h3{
-    color: var(--black);
-    font-size: 62px;
+    font-size: 2.6rem;
 }
 
 .about-content p{
-    color: var(--black);
-    font-size: 20px;
-    margin: 2em 0 3em;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
 }
 
+.project {
+    background: var(--cream);
+}
 
 .projects h2 {
     text-align: center;
@@ -176,9 +222,13 @@ section {
     flex: 0 0 30%; 
     position: relative;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
     transition: transform 0.3s ease, border-radius 0.3s ease;
+}
+
+.project-box:hover {
+    transform: scale(1.05); 
+    border-radius: 5rem 5rem; 
 }
 
 .project-box img {
@@ -186,11 +236,6 @@ section {
     height: 20rem;
     object-fit: cover;
     transition: transform 0.3s ease;
-}
-
-.project-box:hover {
-    transform: scale(1.05); 
-    border-radius: 5rem 5rem; 
 }
 
 .project-box:hover img {
@@ -218,19 +263,26 @@ section {
 }
 
 .project-layer h4 {
-    font-size: 1.8rem;
+    font-size: 3rem;
     color: var(--beige);
     margin-bottom: 0.5rem;
 }
 
+.project-layer p {
+    font-size: 1.6rem;
+    color: var(--beige);
+    margin: .3rem 0 1rem;
+}
+
 .project-layer a {
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     padding: 0.5rem 1rem;
     background: var(--coral-2);
     color: var(--black);
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    margin-top: 1rem;
+    border-radius: 1rem;
+    font-size: 3rem;
     transition: background 0.3s ease;
 }
 
@@ -250,18 +302,16 @@ section {
 
 .footer-content {
     color: var(--beige);
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-align: center; 
 }
 
 .footer-icon {
     position: relative;
-    top: -4rem; 
     left: 50%; 
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
-    
 }
 
 .footer-icon a {
@@ -270,11 +320,12 @@ section {
     font-size: 2rem;
     display: flex;
     flex-direction: column;
+    margin: 3rem 0;
     
 }
 
 .footer-icon a i {
-    font-size: 3rem;
+    font-size: 5rem;
     transition: transform 0.3s ease; 
 }
 
@@ -283,7 +334,7 @@ section {
 }
 
 .footer-icon a span {
-    font-size: 2rem; 
+    font-size: 3rem; 
     font-weight: bold;
     color: var(--black);
 }
@@ -389,7 +440,7 @@ section {
 }
 
 @media (max-width: 365px) {
-    .image-box img{
+    .home-img img{
         width: 100%;
     }
     .about-img img{
