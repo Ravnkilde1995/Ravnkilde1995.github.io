@@ -432,9 +432,9 @@ section {
 
     .social-media {
         display: flex;
-        justify-content: center; /* Centrerer social media-ikonerne */
-        gap: 1.5rem; /* Tilføjer afstand mellem ikonerne */
-        margin-top: 2rem; /* Tilføjer afstand over social media-ikonerne */
+        justify-content: center; 
+        gap: 1.5rem; 
+        margin-top: 2rem;
     }
 
     .btn-container {
@@ -443,7 +443,7 @@ section {
     }
 
     .btn {
-        margin: 2rem auto; /* Centrerer knappen */
+        margin: 2rem auto;
     }
     
 }
