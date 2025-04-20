@@ -41,11 +41,11 @@ window.onscroll = () => {
 // Array of project objects
 const projects = [
     {
-      title: "TEST 1",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      media: "assets/ravenArt.png",
-      type: "image",
-      link: "#",
+      title: "Oh.studio",
+      description: "A sleek recreation to explore minimal design, smooth scroll animations, interactive hover effects, and more.",
+      media: "assets/oh-studio.mp4",
+      type: "video",
+      link: "projects/oh-studio/oh-studio.html",
       color: "#F5F2E7"
     },
     {
@@ -114,12 +114,12 @@ function showProject(index) {
     mediaContainer.appendChild(img);
   } else if (project.type === "video") {
     const video = document.createElement("video");
-    video.src = project.src;
+    video.src = project.media;
     video.autoplay = true;
     video.muted = true;
     video.loop = true;
     video.playsInline = true;
-    projectMedia.appendChild(video);
+    mediaContainer.appendChild(video);
   }
 
   // Set project title, description, link, and background color
@@ -142,3 +142,15 @@ document.querySelector(".next-btn").addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
   showProject(currentProject);
 });
+
+// scrool reveal
+const sr = ScrollReveal({
+    distance: '80px',
+    duration: 2000,
+    delay: 200,
+});
+
+sr.reveal('.home-content, .heading', { origin: 'top' });
+sr.reveal('.home-img img, .project-content-wrapper', { origin: 'bottom' });
+sr.reveal('.home-content h1, .about-img', { origin: 'left' });
+sr.reveal('.home-content p, .about-content', { origin: 'right' });

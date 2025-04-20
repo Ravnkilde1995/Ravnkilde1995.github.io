@@ -254,8 +254,8 @@ section {
 
 .project-media img,
 .project-media video {
-    width: 100%;
-    height: auto;
+    width: 40vw;
+    height: 30vw;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--black);
     object-fit: cover;
