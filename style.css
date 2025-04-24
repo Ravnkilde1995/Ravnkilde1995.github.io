@@ -88,7 +88,7 @@
 section {
     min-height: 100vh;
     padding: 10rem 12% 2rem;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
 }
 
 .home{
@@ -103,6 +103,7 @@ section {
 
 .home-content .btn-container{
     flex-direction: column;
+    margin-top: 1rem;
 }
 
 .home-content h3 {
@@ -159,7 +160,6 @@ section {
     color: var(--black);
     font-size: 1.8rem;
     font-weight: 500;
-    box-shadow: 0 0 1rem var(--black);
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -447,57 +447,7 @@ section {
     color: var(--black);
     border: none;
     padding: .7rem 1.2rem;
-    margin: .5rem;
     border-radius: .5rem;
-}
-
-.footer {
-    position: relative;
-    text-align: center; 
-}
-
-.footer-background {
-    background: var(--black); 
-    padding: 2rem 0; 
-}
-
-.footer-content {
-    color: var(--beige);
-    font-size: 1.5rem;
-    text-align: center; 
-}
-
-.footer-icon {
-    position: relative;
-    left: 50%; 
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-}
-
-.footer-icon a {
-    text-decoration: none;
-    color: var(--coral-2);
-    font-size: 2rem;
-    display: flex;
-    flex-direction: column;
-    margin: 3rem 0;
-    
-}
-
-.footer-icon a i {
-    font-size: 5rem;
-    transition: transform 0.3s ease; 
-}
-
-.footer-icon a:hover i {
-    transform: translateY(-5px); 
-}
-
-.footer-icon a span {
-    font-size: 3rem; 
-    font-weight: bold;
-    color: var(--black);
 }
 
 /* Responsive */
@@ -509,6 +459,14 @@ section {
 }
 
 @media (max-width: 991px) {
+    *{
+        scroll-snap-type: none;
+    }
+
+    .section {
+        scroll-snap-align: none;
+    }
+
     .header {
         padding: 2rem 5%;
         
@@ -516,9 +474,6 @@ section {
 
     .section {
         padding: 10rem 5% 2rem;
-    }
-    .footer {
-        padding: 2rem 5%;
     }
 
     .project-display {
@@ -546,17 +501,65 @@ section {
     .arrow-btn {
         font-size: 4rem; 
     }
+
+    .resume {
+        flex-direction: column;
+        gap: 3rem;
+        padding: 5rem 5%;
+    }
+
+    .resume-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .resume-box {
+        text-align: center;
+    }
+
+    .resume-box h2,
+    .resume-box .heading {
+        font-size: 3rem;
+    }
+
+    .resume-box p,
+    .resume-box .resume-text{ 
+        font-size: 1.4rem;
+    }
+
+    .resume-btn {
+        font-size: 1.4rem; 
+        padding: 1rem 2rem;
+    }
+
+    .resume-detail {
+        padding: 2rem;
+    }
+
+    .resume-list {
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 1.5rem; 
+    }
+
+    .resume-list .resume-item {
+        padding: 2rem; 
+        height: auto; 
+    }
+
+    .resume-list .year {
+        font-size: 1.6rem;
+    }
+
+    .resume-list h3 {
+        font-size: 2rem;
+    }
+
+    .resume-list .company {
+        margin-left: 0;
+    }
 }
 
 @media (max-width: 768px) {
-    *{
-        scroll-snap-type: none;
-    }
-
-    .section {
-        scroll-snap-align: none;
-    }
-
     #mobile-menu-icon {
         display: block;
     }
@@ -581,7 +584,9 @@ section {
         font-size: 2rem;
     }
     .home {
-        flex-direction: column;
+        flex-direction: column-reverse;
+        justify-content: center;
+        
     }
     .home-content h3{
         font-size: 2.5rem;
@@ -592,31 +597,39 @@ section {
     .home-content p{
         font-size: 1.5rem;
     }
-    .img-box img{
-        width: 100%;
-        margin-bottom: 4rem;
+    .resume {
+        padding: 4rem 3%;
     }
-    .about {
-        flex-direction: column;
-        gap: 0;
+    .resume-box h2,
+    .resume-box .heading {
+        font-size: 2.8rem;
     }
-    .about-img img{
-        width: 100%;
-        margin-top: 2rem;
+
+    .resume-box p,
+    .resume-box .resume-text{
+        font-size: 1.3rem;
     }
-    .about-content h2{
-        font-size: 3rem;
+
+    .resume-btn {
+        font-size: 1.2rem;
     }
-    .about-content h3{
-        font-size: 4rem;
+
+    .resume-list .resume-item {
+        padding: 1.5rem; 
     }
-    .about-content p{
-        font-size: 1.5rem;
+
+    .resume-container .portfolio-container {
+        grid-template-columns: 1fr;
     }
 
     .projects h2 {
         font-size: 7rem;
     }
+
+    .resume-container {
+        grid-template-columns: 1fr;
+    }
+
     .project-container {
         flex-direction: column; 
         align-items: center; 
@@ -642,13 +655,28 @@ section {
     
 }
 
+@media (max-width: 600px) {
+    .home-img img{
+        width: 30rem;
+        height: 30rem;
+    }
+}
+
 @media (max-width: 450px) {
     .html{
         font-size: 50%;
     }
 }
 
-@media (max-width: 365px) {
+@media (max-width: 400px) {
+
+    .resume-box h2, 
+    .resume-box .heading,
+    .resume-box p,
+    .resume-detail.about .resume-item {
+        text-align: center;
+    }
+
 
     .home-img img{
         width: 100%;
