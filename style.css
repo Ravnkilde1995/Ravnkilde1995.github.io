@@ -7,10 +7,11 @@
     list-style: none;
     border: none;
     outline: none;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 }
 
-html {
+.html {
     font-size: 62.5%;
     overflow-x: hidden;
 }
@@ -43,7 +44,7 @@ html {
     border-bottom: .1rem solid var(--black);
 }
 
-#logo {
+.site-logo{
     color: var(--beige); 
     font-size: 3rem;
     font-weight: 600;
@@ -51,22 +52,22 @@ html {
     transition: 0.3s ease;
 }
 
-#menu-icon {
+#mobile-menu-icon {
     display: none;
     font-size: 3.6rem;
     color: var(--beige); 
 }
 
-#logo:hover {
+.site-logo:hover {
     color: var(--coral-2); 
 }
 
 
-#color {
+.highlight-text {
     color: var(--coral-2); 
 }
 
-#name {
+.highlight-accent {
     color: var(--coral-1); 
 }
 
@@ -74,7 +75,7 @@ html {
     font-size: 2rem;
     font-weight: 500;
     color: var(--beige); 
-    margin-left: 4rem;
+    margin-left: 1.5rem;
     border-bottom: 3px solid transparent;
     transition: 0.3s ease;
 }
@@ -87,6 +88,7 @@ html {
 section {
     min-height: 100vh;
     padding: 10rem 12% 2rem;
+    scroll-snap-align: start;
 }
 
 .home{
@@ -97,6 +99,10 @@ section {
 
 .home-content {
     max-width: 800px;
+}
+
+.home-content .btn-container{
+    flex-direction: column;
 }
 
 .home-content h3 {
@@ -119,6 +125,12 @@ section {
     font-size: 1.6rem;
 }
 
+.social-media {
+    margin-left: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
 .social-media a{
     display: inline-flex;
     justify-content: center;
@@ -130,7 +142,7 @@ section {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--coral-2);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 1rem 1.5rem 1rem 0;
     transition: .5s ease;
 }
 
@@ -141,12 +153,11 @@ section {
 }
 
 .btn {
-    display: inline-block;
+    display: inline-flex;
     padding: 1.5rem 3rem;
     background: var(--coral-2);
     color: var(--black);
     font-size: 1.8rem;
-    border-radius: 3rem;
     font-weight: 500;
     box-shadow: 0 0 1rem var(--black);
     transition: background 0.3s ease, transform 0.3s ease;
@@ -165,7 +176,12 @@ section {
     box-shadow: 0 0 1rem var(--blue);
 }
 
-.about {
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.resume {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -174,30 +190,171 @@ section {
     background: var(--blue);
 }
 
-.about-img img{
-    box-shadow: 0 0 1rem var(--black);
-    width: 35vw;
-    border-radius: 50%;
-    
+.resume-container {
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    gap: 2rem;
+    margin-top: -3rem;
 }
 
-.heading {
-    text-align: center;
-    font-size: 4.5rem;
+.resume-box h2{
+    font-size: 3.5rem;
 }
 
-.about-content h2{
-    text-align: left;
-    line-height: 1.2;
+.resume-box p{
+    font-size: 1rem;
 }
 
-.about-content h3{
-    font-size: 2.6rem;
+.resume-box .resume-text{
+    margin: 1rem 0 1.5rem;
 }
 
-.about-content p{
+.resume-box .resume-btn {
+    width: 100%;
+    height: 4.3rem;
+    background: var(--coral-2);
     font-size: 1.6rem;
-    margin: 2rem 0 3rem;
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    border-radius: .8rem;
+    cursor: pointer;
+}
+
+.resume-box .resume-btn.active {
+    background-color: var(--coral-1);
+}
+
+.resume-detail {
+    display: none;
+}
+
+.resume-detail.active {
+    display: block;
+}
+
+.resume-box .heading {
+    font-size: 3.5rem;
+    text-align: left;
+}
+
+.resume-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 2rem;
+    height: 35rem;
+    overflow: auto;
+}
+
+.resume-list::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.resume-list::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 1rem;
+}
+
+.resume-list:hover::-webkit-scrollbar-thumb {
+    background: var(--coral-2);
+}
+
+.resume-list .resume-item {
+    background: var(--beige);
+    border-radius: .8rem;
+    padding: 3rem 2.5rem;
+    height: calc((35rem - 2rem) / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.resume-list .year {
+    color: var(--coral-2);
+}
+
+.resume-list h3 {
+    font-size: 2.2rem;
+}
+
+.resume-list .company {
+    position: relative;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.resume-list .company::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    transform: translate(-50%);
+    padding: .5rem;
+    background: var(--coral-2);
+    border-radius: 50%;
+    margin-left: -1.4rem;
+}
+
+.resume-detail.skills .resume-list {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    height: auto;
+    overflow: visible;
+}
+
+.resume-detail.skills .resume-item {
+    height: auto;
+    position: relative;
+    align-items: center;
+}
+
+.resume-detail.skills .resume-item i {
+    font-size: 8.5rem;
+    transition: .5s;
+}
+
+.resume-detail.skills .resume-item:hover i {
+    color: var(--coral-2);
+}
+
+.resume-detail.skills .resume-item span {
+    position: absolute;
+    top: 70%;
+    background: var(--coral-2);
+    font-size: 1.6rem;
+    color: var(--black);
+    padding: .5rem 1rem;
+    border-radius: .6rem;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(.9);
+    transition: .5s;
+}
+
+.resume-detail.skills .resume-item:hover span {
+    top: 75%;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.resume-detail.about .resume-list {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    height: auto;
+}
+
+.resume-detail.about .resume-item {
+    height: auto;
+    padding: 0 0 1rem;
+    background: transparent;
+}
+
+.resume-detail.about .resume-item p {
+    color: var(--black);
+    font-size: 1.8rem;
+}
+
+.resume-detail.about .resume-item p span {
+    color: var(--coral-2);
+    margin-left: 1rem;
+    
 }
 
 .projects {
@@ -254,8 +411,8 @@ section {
 
 .project-media img,
 .project-media video {
-    width: 40vw;
-    height: 30vw;
+    width: 35vw;
+    height: 25vw;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--black);
     object-fit: cover;
@@ -356,6 +513,7 @@ section {
         padding: 2rem 5%;
         
     }
+
     .section {
         padding: 10rem 5% 2rem;
     }
@@ -391,7 +549,15 @@ section {
 }
 
 @media (max-width: 768px) {
-    #menu-icon {
+    *{
+        scroll-snap-type: none;
+    }
+
+    .section {
+        scroll-snap-align: none;
+    }
+
+    #mobile-menu-icon {
         display: block;
     }
     .navbar {
@@ -462,9 +628,7 @@ section {
 
     .social-media {
         display: flex;
-        justify-content: center; 
         gap: 1.5rem; 
-        margin-top: 2rem;
     }
 
     .btn-container {

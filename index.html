@@ -12,11 +12,11 @@
 
     <!-- header -->
     <header class="header">
-        <a id="logo"><span id="color">Port</span>folio</a>
-        <i id="menu-icon" class='bx bx-menu'></i>
+        <a class="site-logo"><span class="highlight-text">Port</span>folio</a>
+        <i id="mobile-menu-icon" class='bx bx-menu'></i>
         <nav class="nav navbar">
             <a href="#home" class="active">Welcome</a>
-            <a href="#about">About Me</a>
+            <a href="#resume">Resume</a>
             <a href="#projects">Projects</a>     
         </nav>
     </header>
@@ -25,37 +25,168 @@
     <section class="home" id="home">
         <div class="home-content">
             <h3>Hello,</h3>  
-            <h1>I'm <span id="name">Oliver<br></span></h1>
+            <h1>I'm <span class="highlight-accent">Oliver<br></span></h1>
             <h3>And welcome to my portfolio</h3>  
             <p>I'm  a junior frontend developer with a passion for building interactive and visually appealing web experiences. This site showcases some of the projects I've worked on as I continue to grow my skills in modern web development. Take a look around and feel free to reach out!</p>
-            <div class="social-media">
-                <a href="https://github.com/Ravnkilde1995" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
-                <a href="https://www.linkedin.com/in/oliver-ravnkilde-300895249/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-            </div>
             <div class="btn-container">
                 <a href="" class="btn">Download CV</a>
+                <div class="social-media">
+                    <a href="https://github.com/Ravnkilde1995" target="_blank" aria-label="GitHub"><i class='bx bxl-github'></i></a>
+                    <a href="https://www.linkedin.com/in/oliver-ravnkilde-300895249/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                </div>
             </div>
+            
         </div>
         <div class="home-img">
-            <img src="assets/ravenArt.png" alt="Illustration of art">
+            <img src="assets/me_2.png" alt="Illustration of art">
         </div>
     </section>
 
-    <!-- about section -->
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="projects/oh-studio/assets/img/pexels-justin-shaifer-501272-1222271.jpg" alt="Portrait of a developer">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span id="name">Me</span></h2>
-            <h3>Jr. Frontend <span id="name">Developer</span></h3>
-            <p>I'm a self-driven frontend developer focused on writing clean, efficient code and creating responsive, user-friendly interfaces. My core skills include HTML, CSS, and JavaScript, and I'm constantly learning new tools and frameworks to improve my workflow. Whether it's through online courses or hands-on projects, I'm always looking for ways to level up and bring ideas to life through code.</p>
+    <!-- resume section -->
+    <section class="resume" id="resume">
+        <div class="resume-container">
+            <div class="resume-box">
+                <h2>Why Hire Me?</h2>
+                <p class="resume-text">I'm a self-driven frontend developer focused on writing clean, efficient code and creating responsive, user-friendly interfaces. My core skills include HTML, CSS, and JavaScript, and I'm constantly learning new tools and frameworks to improve my workflow. Whether it's through online courses or hands-on projects, I'm always looking for ways to level up and bring ideas to life through code.</p>
+                <button class="resume-btn active">Experience</button>
+                <button class="resume-btn">Education</button>
+                <button class="resume-btn">Skills</button>
+                <button class="resume-btn">About Me</button>
+            </div>
+            <div class="resume-box">
+                <div class="resume-detail experience active">
+                    <h2 class="heading">My <span class="highlight-accent">Experience</span></h2>
+                    <p class="resume-text">HTML</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p class="year">2024 - 2025</p>
+                            <h3>Developer</h3>
+                            <p class="company">GN Store Nord</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2023 - 2024</p>
+                            <h3>Developer</h3>
+                            <p class="company">GN Store Nord</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2022 - 2023</p>
+                            <h3>Developer</h3>
+                            <p class="company">Youtube</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2022 - 2023</p>
+                            <h3>Developer</h3>
+                            <p class="company">Youtube</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2022 - 2023</p>
+                            <h3>Developer</h3>
+                            <p class="company">Youtube</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-detail education">
+                    <h2 class="heading">My <span class="highlight-accent">Education</span></h2>
+                    <p class="resume-text">HTML</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p class="year">2024</p>
+                            <h3>AP Degree</h3>
+                            <p class="company">CPH Business Academy</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2023</p>
+                            <h3>Programming Course</h3>
+                            <p class="company">Online</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2022</p>
+                            <h3>Web Development Bootcamp</h3>
+                            <p class="company">Online Course Playform</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                        <div class="resume-item">
+                            <p class="year">2021</p>
+                            <h3>Programming Course</h3>
+                            <p class="company">Online</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque, labore. Ipsa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-detail skills">
+                    <h2 class="heading">My <span class="highlight-accent">Skills</span></h2>
+                    <p class="resume-text">HTML</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <i class='bx bxl-html5'></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-css3'></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-javascript'></i>
+                            <span>Javascript</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-react'></i>
+                            <span>React</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-java' ></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="resume-item">
+                            <i class='bx bxl-python'></i>
+                            <span>Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-detail about">
+                    <h2 class="heading">About <span class="highlight-accent">Me</span></h2>
+                    <p class="resume-text">HTML</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                            <p><span>Name </span>Oliver Ravnkilde</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>Gender </span>Male</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>Age </span>29</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>Status </span>Married</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>City </span>Skovlunde</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>Phone </span>+45 28912050</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>Email </span>Ravnkilde1995@gmail.com</p>
+                        </div>
+                        <div class="resume-item">
+                            <p><span>Languages </span>Danish, English</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- project section -->
     <section class="projects" id="projects">
-        <h2 class="heading">My <span id="name">Work</span></h2>
+        <h2 class="heading">My <span class="highlight-accent">Work</span></h2>
         <div class="project-content-wrapper">
           <button class="arrow-btn prev-btn"><i class='bx bx-chevron-left'></i></button>
           <div class="project-display">
@@ -77,7 +208,7 @@
         <div class="footer-icon">
             <a href="#home" aria-label="Go back to top">
                 <i class='bx bx-up-arrow-alt'></i>
-                <span>Go <span id="name">Back</span></span>
+                <span>Go <span class="highlight-accent">Back</span></span>
             </a>
         </div>
         <div class="footer-background">

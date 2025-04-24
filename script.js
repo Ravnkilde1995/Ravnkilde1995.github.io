@@ -3,7 +3,7 @@ const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header nav a");
 
 // toggle navbar
-const menuIcon = document.querySelector("#menu-icon");
+const menuIcon = document.querySelector("#mobile-menu-icon");
 const navbar = document.querySelector(".navbar");
 
 
@@ -36,6 +36,26 @@ window.onscroll = () => {
     menuIcon.classList.remove("bx-x");
     navbar.classList.remove("active");
 };
+
+// Resume section
+
+const resumeBtns = document.querySelectorAll(".resume-btn");
+const resumeDetails = document.querySelectorAll(".resume-detail");
+
+resumeBtns.forEach((btn, idx) => { 
+    btn.addEventListener("click", () => {
+      resumeBtns.forEach((btn) => {
+        btn.classList.remove("active");
+    });
+      btn.classList.add("active");
+
+      resumeDetails.forEach((detail) => {
+        detail.classList.remove("active");
+      });
+      resumeDetails[idx].classList.add("active");
+  });
+});
+
 
 // project section
 // Array of project objects
@@ -150,7 +170,7 @@ const sr = ScrollReveal({
     delay: 200,
 });
 
-sr.reveal('.home-content, .heading', { origin: 'top' });
+sr.reveal('.home-content', { origin: 'top' });
 sr.reveal('.home-img img, .project-content-wrapper', { origin: 'bottom' });
-sr.reveal('.home-content h1, .about-img', { origin: 'left' });
-sr.reveal('.home-content p, .about-content', { origin: 'right' });
+sr.reveal('.home-content h1 ', { origin: 'left' });
+sr.reveal('.home-content p', { origin: 'right' });
