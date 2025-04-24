@@ -660,6 +660,47 @@ section {
         width: 30rem;
         height: 30rem;
     }
+
+    .resume {
+        padding: 3rem 2rem;
+        gap: 2rem;
+    }
+
+    .resume-box h2,
+    .resume-box .heading {
+        font-size: 2.5rem;
+    }
+
+    .resume-box p,
+    .resume-box .resume-text {
+        font-size: 1.2rem;
+    }
+
+    .resume-btn {
+        font-size: 1.2rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .resume-detail {
+        padding: 1.5rem;
+    }
+
+    .resume-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .resume-list .resume-item {
+        padding: 1rem;
+    }
+
+    .resume-list .year {
+        font-size: 1.4rem;
+    }
+
+    .resume-list h3 {
+        font-size: 1.8rem;
+    }
 }
 
 @media (max-width: 450px) {
@@ -680,9 +721,11 @@ section {
 
     .home-img img{
         width: 100%;
+        height: 100%;
     }
     .about-img img{
         width: 100%;
+        height: 100%;
     }  
     
 }
