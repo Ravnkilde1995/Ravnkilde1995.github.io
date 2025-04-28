@@ -669,6 +669,14 @@ section {
         font-size: 1.3rem;
     }
 
+    .resume-detail.about .resume-item p {
+        font-size: 1.4rem; 
+    }
+    
+    .resume-detail.about .resume-item p i {
+        font-size: 1.6rem;
+    }
+
     .resume-btn {
         font-size: 1.2rem;
     }
