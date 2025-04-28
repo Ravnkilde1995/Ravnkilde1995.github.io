@@ -69,11 +69,11 @@ const projects = [
       color: "#F5F2E7"
     },
     {
-      title: "TEST 2",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "SmartPDF",
+      description: "This Single Page Application includes an OCR-enabled upload system and an editor for inserting data into delivery note templates. It automates parts of a package handling process in GN service desk.",
       media: "assets/ravenArt.png",
       type: "image",
-      link: "#",
+      link: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
       color: "#E8E3DA"
     },
     {
@@ -171,6 +171,6 @@ const sr = ScrollReveal({
 });
 
 sr.reveal('.home-content', { origin: 'top' });
-sr.reveal('.home-img img, .project-content-wrapper', { origin: 'bottom' });
+sr.reveal('.home-img img, .project-content-wrapper, .resume-box', { origin: 'bottom' });
 sr.reveal('.home-content h1 ', { origin: 'left' });
 sr.reveal('.home-content p', { origin: 'right' });
