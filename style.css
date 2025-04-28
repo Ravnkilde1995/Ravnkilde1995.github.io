@@ -345,15 +345,45 @@ section {
     background: transparent;
 }
 
+.resume-detail.about .resume-profile-img {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: start;
+  }
+
+  .resume-detail.about .resume-profile-img img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 50%; 
+    box-shadow: 0 0 1rem var(--black);
+  }
+
 .resume-detail.about .resume-item p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     color: var(--black);
     font-size: 1.8rem;
 }
 
+.resume-detail.about .resume-item p i {
+    color: var(--coral-2);
+    font-size: 2rem;
+    min-width: 2rem;
+    text-align: center;
+}
+
+.resume-detail.about .resume-item p:hover i {
+    color: var(--coral-1);
+    transform: scale(1.2);
+    transition: all 0.3s ease;
+}
+
 .resume-detail.about .resume-item p span {
     color: var(--coral-2);
-    margin-left: 1rem;
-    
+    font-weight: bold;
+    margin-right: 0.5rem;
 }
 
 .projects {
@@ -519,11 +549,16 @@ section {
     .resume-box h2,
     .resume-box .heading {
         font-size: 3rem;
+        text-align: center;
     }
+
+    .resume-detail.about .resume-profile-img {
+        justify-content: center;
+      }
 
     .resume-box p,
     .resume-box .resume-text{ 
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     .resume-btn {
