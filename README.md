@@ -1,4 +1,4 @@
-# 🌐 Ravnkilde's Frontend Portfolio
+# 🌐 My Portfolio
 
 Welcome to my GitHub Pages portfolio!  
 This repository contains a collection of frontend projects I've created to practice and showcase my development skills. Projects are continuously added and updated as I learn new techniques and technologies.
@@ -18,26 +18,6 @@ The projects in this portfolio are built using a mix of the following tools and 
 - Responsive Web Design  
 - Git & GitHub  
 - GitHub Pages for deployment  
-
-Some projects may also include:
-
-- Flexbox / CSS Grid  
-- Simple JavaScript animations or logic  
-- Frameworks like React (in future additions)
-
----
-
-## 📁 Repository Structure
-
-This repository is structured with each project inside its own folder.  
-Each folder typically includes:
-
-- `index.html` – the main HTML file  
-- `style.css` or `/scss/` – for styling  
-- `script.js` – for interactivity  
-- Assets folder for images, fonts, etc.
-
-Projects are linked directly from the landing page of the portfolio (`index.html` in the root).
 
 ---
 
