@@ -9,32 +9,32 @@ const navbar = document.querySelector(".navbar");
 
 // toggle icon and navbar when click
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle("bx-x");
-    navbar.classList.toggle("active");
+  menuIcon.classList.toggle("bx-x");
+  navbar.classList.toggle("active");
 }
 // remove toggle icon and navbar when click (scroll)
 window.onscroll = () => {
-    sections.forEach(sec => {
-        const top = window.scrollY;
-        const offset = sec.offsetTop - 150;
-        const height = sec.offsetHeight;
-        const id = sec.getAttribute("id");
-    
-        if (top >= offset && top < offset + height) {
-        navLinks.forEach(links => {
-            links.classList.remove("active");
-            document.querySelector("header nav a[href*=" + id + "]").classList.add("active");
-        });
-        };
-    });
+  sections.forEach(sec => {
+    const top = window.scrollY;
+    const offset = sec.offsetTop - 150;
+    const height = sec.offsetHeight;
+    const id = sec.getAttribute("id");
 
-    // sticky navbar
-    const header = document.querySelector("header");
-    header.classList.toggle("sticky", window.scrollY > 100);
+    if (top >= offset && top < offset + height) {
+      navLinks.forEach(links => {
+        links.classList.remove("active");
+        document.querySelector("header nav a[href*=" + id + "]").classList.add("active");
+      });
+    };
+  });
 
-    // remove toggle icon and toggled navbar when click (scroll)
-    menuIcon.classList.remove("bx-x");
-    navbar.classList.remove("active");
+  // sticky navbar
+  const header = document.querySelector("header");
+  header.classList.toggle("sticky", window.scrollY > 100);
+
+  // remove toggle icon and toggled navbar when click (scroll)
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
 };
 
 // Resume section
@@ -42,17 +42,17 @@ window.onscroll = () => {
 const resumeBtns = document.querySelectorAll(".resume-btn");
 const resumeDetails = document.querySelectorAll(".resume-detail");
 
-resumeBtns.forEach((btn, idx) => { 
-    btn.addEventListener("click", () => {
-      resumeBtns.forEach((btn) => {
-        btn.classList.remove("active");
+resumeBtns.forEach((btn, idx) => {
+  btn.addEventListener("click", () => {
+    resumeBtns.forEach((btn) => {
+      btn.classList.remove("active");
     });
-      btn.classList.add("active");
+    btn.classList.add("active");
 
-      resumeDetails.forEach((detail) => {
-        detail.classList.remove("active");
-      });
-      resumeDetails[idx].classList.add("active");
+    resumeDetails.forEach((detail) => {
+      detail.classList.remove("active");
+    });
+    resumeDetails[idx].classList.add("active");
   });
 });
 
@@ -60,65 +60,46 @@ resumeBtns.forEach((btn, idx) => {
 // project section
 // Array of project objects
 const projects = [
-    {
-      title: "Oh.studio",
-      description: "A sleek recreation to explore minimal design, smooth scroll animations, interactive hover effects, and more.",
-      media: "assets/oh-studio.mp4",
-      type: "video",
-      link: "projects/oh-studio/oh-studio.html",
-      color: "#F5F2E7"
-    },
-    {
-      title: "SmartPDF",
-      description: "This Single Page Application includes an OCR-enabled upload system and an editor for inserting data into delivery note templates. It automates parts of a package handling process in GN service desk.",
-      media: "assets/ravenArt.png",
-      type: "image",
-      link: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
-      color: "#E8E3DA"
-    },
-    {
-      title: "TEST 3",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      media: "assets/ravenArt.png",
-      type: "image",
-      link: "#",
-      color: "#989389"
-    },
-    {
-      title: "TEST 4",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      media: "assets/ravenArt.png",
-      type: "image",
-      link: "#",
-      color: "#E8E3DA"
-    },
-    {
-      title: "TEST 5",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      media: "assets/ravenArt.png",
-      type: "image",
-      link: "#",
-      color: "#F5F2E7"
-    },
-    {
-      title: "TEST 6",
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      media: "assets/ravenArt.png",
-      type: "image",
-      link: "#",
-      color: "#E8E3DA"
-    }
-  ];
+  {
+    title: "Oh.studio",
+    description: "A sleek recreation to explore minimal design, smooth scroll animations, interactive hover effects, and more.",
+    tech: "HTML5, CSS, JavaScript",
+    media: "assets/oh-studio.mp4",
+    type: "video",
+    link: "projects/oh-studio/oh-studio.html",
+    github: "https://github.com/Ravnkilde1995",
+    color: "#F5F2E7"
+  },
+  {
+    title: "SmartPDF",
+    description: "This Single Page Application includes an OCR-enabled upload system and an editor for inserting data into delivery note templates. It automates parts of a package handling process in GN service desk.",
+    media: "assets/ravenArt.png",
+    type: "image",
+    link: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
+    color: "#E8E3DA"
+  },
+  {
+    title: "TEST 3",
+    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    media: "assets/ravenArt.png",
+    type: "image",
+    link: "#",
+    color: "#989389"
+  }
+];
 
 // Initialize the current project index
 let currentProject = 0;
 
 // Get references to the HTML elements
 const mediaContainer = document.getElementById("project-media");
-const titleEl = document.getElementById("project-title");
-const descriptionEl = document.getElementById("project-description");
+const title = document.getElementById("project-title");
+const description = document.getElementById("project-description");
+const number = document.getElementById("project-number");
+const tech = document.getElementById("project-tech");
 const linkEl = document.getElementById("project-link");
-const sectionEl = document.querySelector(".projects");
+const github = document.getElementById("project-github");
+const section = document.querySelector(".projects");
 
 // Function to show the project based on the current index
 function showProject(index) {
@@ -142,11 +123,14 @@ function showProject(index) {
     mediaContainer.appendChild(video);
   }
 
-  // Set project title, description, link, and background color
-  titleEl.textContent = project.title;
-  descriptionEl.textContent = project.description;
+  // Set project title, description, etc..
+  number.textContent = `${index + 1}`;
+  title.textContent = project.title;
+  description.textContent = project.description;
+  tech.textContent = project.tech;
   linkEl.href = project.link;
-  sectionEl.style.backgroundColor = project.color;
+  github.href = project.github;
+  section.style.backgroundColor = project.color;
 }
 // Add event listeners for the previous and next buttons
 document.querySelector(".prev-btn").addEventListener("click", () => {
@@ -165,9 +149,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // scrool reveal
 const sr = ScrollReveal({
-    distance: '80px',
-    duration: 2000,
-    delay: 200,
+  distance: '80px',
+  duration: 2000,
+  delay: 200,
 });
 
 sr.reveal('.home-content', { origin: 'top' });
