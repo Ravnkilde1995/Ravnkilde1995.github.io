@@ -173,6 +173,6 @@ const sr = ScrollReveal({
 });
 
 sr.reveal('.home-content', { origin: 'top' });
-sr.reveal('.home-img img, .project-content-wrapper, .resume-box', { origin: 'bottom' });
+sr.reveal('.home-img img, .portfolio-container, .resume-box', { origin: 'bottom' });
 sr.reveal('.home-content h1 ', { origin: 'left' });
 sr.reveal('.home-content p', { origin: 'right' });
