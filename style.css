@@ -825,7 +825,13 @@ section {
     }
 
     .portfolio-container {
+        display: flex;
+        flex-direction: column-reverse;
         gap: 1rem;
+    }
+
+    .portfolio-detail .numb {
+        margin-top: 2rem;
     }
 
     .portfolio-detail h3 {
