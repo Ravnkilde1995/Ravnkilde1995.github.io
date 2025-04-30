@@ -66,16 +66,17 @@ const projects = [
     tech: "HTML5, CSS, JavaScript",
     media: "assets/oh-studio.mp4",
     type: "video",
-    link: "projects/oh-studio/oh-studio.html",
-    github: "https://github.com/Ravnkilde1995",
+    link: "projects/oh-studio/index.html",
+    github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/oh-studio",
     color: "#F5F2E7"
   },
   {
     title: "SmartPDF",
-    description: "This Single Page Application includes an OCR-enabled upload system and an editor for inserting data into delivery note templates. It automates parts of a package handling process in GN service desk.",
+    description: "This Single Page Application includes an OCR-enabled upload system and an editor for inserting data into delivery note templates. It automates parts of a package handling process in GN service desk. Structure is following the MVC pattern.",
+    tech: "HTML5, CSS, JavaScript, Flask, Python, OCR",
     media: "assets/ravenArt.png",
     type: "image",
-    link: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
+    github: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
     color: "#E8E3DA"
   },
   {
@@ -83,7 +84,6 @@ const projects = [
     description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     media: "assets/ravenArt.png",
     type: "image",
-    link: "#",
     color: "#989389"
   }
 ];
@@ -97,7 +97,7 @@ const title = document.getElementById("project-title");
 const description = document.getElementById("project-description");
 const number = document.getElementById("project-number");
 const tech = document.getElementById("project-tech");
-const linkEl = document.getElementById("project-link");
+const link = document.getElementById("project-link");
 const github = document.getElementById("project-github");
 const section = document.querySelector(".projects");
 
@@ -128,10 +128,28 @@ function showProject(index) {
   title.textContent = project.title;
   description.textContent = project.description;
   tech.textContent = project.tech;
-  linkEl.href = project.link;
+  link.href = project.link;
   github.href = project.github;
   section.style.backgroundColor = project.color;
+
+  // Handle button visibility
+
+  if (project.link) {
+    link.style.display = "inline-flex";
+    link.href = project.link;
+  } else {
+    link.style.display = "none";
+  }
+
+  if (project.github) {
+    github.style.display = "inline-flex";
+    github.href = project.github;
+  } else {
+    github.style.display = "none";
+  }
 }
+
+
 // Add event listeners for the previous and next buttons
 document.querySelector(".prev-btn").addEventListener("click", () => {
   currentProject = (currentProject - 1 + projects.length) % projects.length;
