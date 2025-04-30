@@ -1,7 +1,7 @@
 # 🌐 My Portfolio
 
 Welcome to my GitHub Pages portfolio!  
-This repository contains a collection of frontend projects I've created to practice and showcase my development skills. Projects are continuously added and updated as I learn new techniques and technologies.
+This repository contains a collection of projects I've created to practice and showcase my development skills. Projects are continuously added and updated as I learn new techniques and technologies.
 
 You can view the live portfolio here:  
 👉 **[ravnkilde1995.github.io](https://ravnkilde1995.github.io/)**
@@ -13,8 +13,8 @@ You can view the live portfolio here:
 The projects in this portfolio are built using a mix of the following tools and technologies:
 
 - HTML5  
-- CSS3 / SCSS  
-- JavaScript (Vanilla and ES6+)  
+- CSS3
+- JavaScript  
 - Responsive Web Design  
 - Git & GitHub  
 - GitHub Pages for deployment  
