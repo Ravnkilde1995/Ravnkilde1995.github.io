@@ -1,3 +1,21 @@
+const navLinks = document.querySelectorAll("header nav a");
+const sectionLinks = document.querySelectorAll(".section-nav a");
+
+
+navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        navLinks.forEach(nav => nav.classList.remove('active'));
+        event.target.classList.add('active');
+    });
+});
+
+sectionLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+        sectionLinks.forEach(nav => nav.classList.remove('active'));
+        event.target.classList.add('active');
+    });
+});
+
 const observerOptions = {
     root: null,
     threshold: 0,
@@ -13,12 +31,12 @@ const observer = new IntersectionObserver(entries => {
     });
 }, observerOptions);
 
-window.addEventListener('DOMContentLoaded', (event) => { 
+window.addEventListener('DOMContentLoaded', (event) => {
 
-const sections =Array.from(document.getElementsByClassName('section'));
+    const sections = Array.from(document.getElementsByClassName('section'));
 
-for (let section of sections) {
-  observer.observe(section);
-}
+    for (let section of sections) {
+        observer.observe(section);
+    }
 
 });
