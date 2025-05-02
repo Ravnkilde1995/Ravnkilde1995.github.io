@@ -64,7 +64,7 @@ const projects = [
     title: "Oh.studio",
     description: "A sleek recreation to explore minimal design, smooth scroll animations, interactive hover effects, and more.",
     tech: "HTML5, CSS, JavaScript",
-    media: "assets/oh-studio.mp4",
+    media: "assets/oh-studio-vid.mp4",
     type: "video",
     link: "projects/oh-studio/index.html",
     github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/oh-studio",
@@ -74,18 +74,19 @@ const projects = [
     title: "SmartPDF",
     description: "This Single Page Application includes an OCR-enabled upload system and an editor for inserting data into delivery note templates. It automates parts of a package handling process in GN service desk. Structure is following the MVC pattern.",
     tech: "HTML5, CSS, JavaScript, Flask, Python, OCR",
-    media: "assets/ravenArt.png",
-    type: "image",
+    media: "assets/SmartPDF.mp4",
+    type: "video",
     github: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
     color: "#E8E3DA"
-  },
-  {
-    title: "TEST 3",
-    description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    media: "assets/ravenArt.png",
-    type: "image",
-    color: "#989389"
   }
+  // ,
+  // {
+  //   title: "TEST 3",
+  //   description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  //   media: "assets/ravenArt.png",
+  //   type: "image",
+  //   color: "#989389"
+  // }
 ];
 
 // Initialize the current project index
