@@ -78,15 +78,17 @@ const projects = [
     type: "video",
     github: "https://github.com/Ravnkilde1995/SmartPDF/tree/main",
     color: "#E8E3DA"
+  },
+  {
+    title: "Pricing panel",
+    description: "Built as part of a developer bootcamp course by Colt Steele on Udemy, this project is based on a layout template by Travis Williams. It features a simple pricing panel with a toggle for monthly and yearly pricing, dynamically changing card colors and text.",
+    tech: "HTML5, CSS",
+    media: "assets/pricing-panel.png",
+    type: "image",
+    link: "projects/pricing-panel/index.html",
+    github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/pricing-panel",
+    color: "#989389"
   }
-  // ,
-  // {
-  //   title: "TEST 3",
-  //   description: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  //   media: "assets/ravenArt.png",
-  //   type: "image",
-  //   color: "#989389"
-  // }
 ];
 
 // Initialize the current project index
