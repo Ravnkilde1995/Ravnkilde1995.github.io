@@ -395,6 +395,9 @@ section {
     margin-bottom: 3rem;
 }
 
+.desktop-projects {
+    display: none;
+}
 
 .portfolio-container {
     display: grid;
@@ -514,7 +517,39 @@ section {
     color: var(--coral-2);
 }
 
+.mobile-projects {
+    display: none;
+}
 
+.mobile-projects .portfolio-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mobile-projects .arrow-btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.mobile-projects .arrow-btn {
+    font-size: 2rem;
+    background: var(--coral-2);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.mobile-projects .arrow-btn:hover {
+    background: var(--coral-1);
+}
 
 /* Responsive */
 
@@ -632,7 +667,18 @@ section {
     }
 }
 
+@media (min-width: 769px) {
+    .desktop-projects {
+        display: block;
+    }
+}
+
 @media (max-width: 768px) {
+
+    .mobile-projects {
+        display: block;
+    }
+    
     #mobile-menu-icon {
         display: block;
     }
@@ -754,9 +800,11 @@ section {
         margin: 0 auto
     }
 
-    .img-item {
-        width: 100%;
-    }
+    .img-item img,
+    .img-item video {
+    width: 100%;
+    object-fit: inherit;
+}
 
     .portfolio-carousel .arrow-btn {
         font-size: 3.5rem;

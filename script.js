@@ -38,7 +38,6 @@ window.onscroll = () => {
 };
 
 // Resume section
-
 const resumeBtns = document.querySelectorAll(".resume-btn");
 const resumeDetails = document.querySelectorAll(".resume-detail");
 
@@ -61,13 +60,13 @@ resumeBtns.forEach((btn, idx) => {
 // Array of project objects
 const projects = [
   {
-    title: "Oh.studio",
-    description: "A sleek recreation to explore minimal design, smooth scroll animations, interactive hover effects, and more.",
-    tech: "HTML5, CSS, JavaScript",
-    media: "assets/oh-studio-vid.mp4",
-    type: "video",
-    link: "projects/oh-studio/index.html",
-    github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/oh-studio",
+    title: "Pricing panel",
+    description: "Built as part of a developer bootcamp course by Colt Steele on Udemy, this project is based on a layout template by Travis Williams. It features a simple pricing panel with a toggle for monthly and yearly pricing.",
+    tech: "HTML5, CSS",
+    media: "assets/pricing-panel.png",
+    type: "image",
+    link: "projects/pricing-panel/index.html",
+    github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/pricing-panel",
     color: "#F5F2E7"
   },
   {
@@ -80,13 +79,13 @@ const projects = [
     color: "#E8E3DA"
   },
   {
-    title: "Pricing panel",
-    description: "Built as part of a developer bootcamp course by Colt Steele on Udemy, this project is based on a layout template by Travis Williams. It features a simple pricing panel with a toggle for monthly and yearly pricing, dynamically changing card colors and text.",
-    tech: "HTML5, CSS",
-    media: "assets/pricing-panel.png",
-    type: "image",
-    link: "projects/pricing-panel/index.html",
-    github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/pricing-panel",
+    title: "Oh.studio",
+    description: "A sleek recreation to explore minimal design, smooth scroll animations, interactive hover effects, and more.",
+    tech: "HTML5, CSS, JavaScript",
+    media: "assets/oh-studio-vid.mp4",
+    type: "video",
+    link: "projects/oh-studio/index.html",
+    github: "https://github.com/Ravnkilde1995/Ravnkilde1995.github.io/tree/main/projects/oh-studio",
     color: "#989389"
   }
 ];
@@ -95,74 +94,81 @@ const projects = [
 let currentProject = 0;
 
 // Get references to the HTML elements
-const mediaContainer = document.getElementById("project-media");
-const title = document.getElementById("project-title");
-const description = document.getElementById("project-description");
-const number = document.getElementById("project-number");
-const tech = document.getElementById("project-tech");
-const link = document.getElementById("project-link");
-const github = document.getElementById("project-github");
-const section = document.querySelector(".projects");
+const mediaContainers = document.querySelectorAll("#project-media");
+const titles = document.querySelectorAll("#project-title");
+const descriptions = document.querySelectorAll("#project-description");
+const numbers = document.querySelectorAll("#project-number");
+const techs = document.querySelectorAll("#project-tech");
+const links = document.querySelectorAll("#project-link");
+const githubs = document.querySelectorAll("#project-github");
+const ProjectSections = document.querySelectorAll(".projects");
 
 // Function to show the project based on the current index
 function showProject(index) {
   const project = projects[index];
 
-  // Clear previous media elements
-  mediaContainer.innerHTML = "";
+  // Update all instances
+  mediaContainers.forEach((mediaContainer) => {
+    // Clear previous media elements
+    mediaContainer.innerHTML = "";
 
-  // Create new media elements based on the project type
-  if (project.type === "image") {
-    const img = document.createElement("img");
-    img.src = project.media;
-    mediaContainer.appendChild(img);
-  } else if (project.type === "video") {
-    const video = document.createElement("video");
-    video.src = project.media;
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    mediaContainer.appendChild(video);
-  }
+    // Create new media elements based on the project type
+    if (project.type === "image") {
+      const img = document.createElement("img");
+      img.src = project.media;
+      mediaContainer.appendChild(img);
+    } else if (project.type === "video") {
+      const video = document.createElement("video");
+      video.src = project.media;
+      video.autoplay = true;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      mediaContainer.appendChild(video);
+    }
+  });
 
-  // Set project title, description, etc..
-  number.textContent = `${index + 1}`;
-  title.textContent = project.title;
-  description.textContent = project.description;
-  tech.textContent = project.tech;
-  link.href = project.link;
-  github.href = project.github;
-  section.style.backgroundColor = project.color;
+  // Update text content for all instances
+  numbers.forEach((number) => (number.textContent = `${index + 1}`));
+  titles.forEach((title) => (title.textContent = project.title));
+  descriptions.forEach((description) => (description.textContent = project.description));
+  techs.forEach((tech) => (tech.textContent = project.tech));
+  links.forEach((link) => {
+    if (project.link) {
+      link.style.display = "inline-flex";
+      link.href = project.link;
+    } else {
+      link.style.display = "none";
+    }
+  });
+  githubs.forEach((github) => {
+    if (project.github) {
+      github.style.display = "inline-flex";
+      github.href = project.github;
+    } else {
+      github.style.display = "none";
+    }
+  });
 
-  // Handle button visibility
-
-  if (project.link) {
-    link.style.display = "inline-flex";
-    link.href = project.link;
-  } else {
-    link.style.display = "none";
-  }
-
-  if (project.github) {
-    github.style.display = "inline-flex";
-    github.href = project.github;
-  } else {
-    github.style.display = "none";
-  }
+  // Update background color for all ProjectSections
+  ProjectSections.forEach((section) => (section.style.backgroundColor = project.color));
 }
 
-
 // Add event listeners for the previous and next buttons
-document.querySelector(".prev-btn").addEventListener("click", () => {
-  currentProject = (currentProject - 1 + projects.length) % projects.length;
-  showProject(currentProject);
+document.querySelectorAll(".prev-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    currentProject = (currentProject - 1 + projects.length) % projects.length;
+    showProject(currentProject);
+  });
 });
 
-document.querySelector(".next-btn").addEventListener("click", () => {
-  currentProject = (currentProject + 1) % projects.length;
-  showProject(currentProject);
+document.querySelectorAll(".next-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    currentProject = (currentProject + 1) % projects.length;
+    showProject(currentProject);
+  });
 });
+
 // Show the first project on page load
 document.addEventListener("DOMContentLoaded", () => {
   showProject(currentProject);
